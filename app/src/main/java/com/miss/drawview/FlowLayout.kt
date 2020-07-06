@@ -77,8 +77,16 @@ class FlowLayout : ViewGroup {
 
             if (childView.visibility != View.GONE) {
                 //将layoutParams转变成为 measureSpec
-                var childWidthMeasureSpec = getChildMeasureSpec(widthMeasureSpec,paddingLeft +paddingRight,childLP.width)
-                var childHeightMeasureSpec = getChildMeasureSpec(heightMeasureSpec,paddingTop+paddingBottom,childLP.height)
+                var childWidthMeasureSpec = getChildMeasureSpec(
+                    widthMeasureSpec,
+                    paddingLeft + paddingRight,
+                    childLP.width)
+
+                var childHeightMeasureSpec = getChildMeasureSpec(
+                    heightMeasureSpec,
+                    paddingTop + paddingBottom,
+                    childLP.height
+                )
                 childView.measure(childWidthMeasureSpec, childHeightMeasureSpec)
 
                 //  获取子View测量的宽高
@@ -156,9 +164,6 @@ class FlowLayout : ViewGroup {
         }
 
     }
-
-
-
 
     private fun dp2px(dp: Int): Int {
         return TypedValue.applyDimension(
